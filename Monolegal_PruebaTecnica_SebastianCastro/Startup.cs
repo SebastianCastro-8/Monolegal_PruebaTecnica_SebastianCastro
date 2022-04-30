@@ -7,6 +7,10 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using Monolegal_PruebaTecnica_SebastianCastro.Aplicacion;
+using Monolegal_PruebaTecnica_SebastianCastro.Repositories;
+using Monolegal_PruebaTecnica_SebastianCastro.Repositories.Mongo;
+using Monolegal_PruebaTecnica_SebastianCastro.Utils;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,11 +31,22 @@ namespace Monolegal_PruebaTecnica_SebastianCastro
         public void ConfigureServices(IServiceCollection services)
         {
 
+
+            services.AddTransient<IUsuarioRepository, UsuarioRepository>();
+            services.AddTransient<IFacturaRepository, FacturaRepository>();
+            services.AddTransient<IMongoDb, MongoDb>();
+            services.AddTransient<IUsuarioService, UsuarioService>();
+            services.AddTransient<IFacturaService, FacturaService>();
+            services.AddTransient<IEmailUtil, EmailUtil>();
+
+
+
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Monolegal_PruebaTecnica_SebastianCastro", Version = "v1" });
             });
+            services.AddAutoMapper(typeof(Startup));   
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -47,7 +62,7 @@ namespace Monolegal_PruebaTecnica_SebastianCastro
             app.UseHttpsRedirection();
 
             app.UseRouting();
-
+            app.UseCors(builder=>builder.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin());
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>

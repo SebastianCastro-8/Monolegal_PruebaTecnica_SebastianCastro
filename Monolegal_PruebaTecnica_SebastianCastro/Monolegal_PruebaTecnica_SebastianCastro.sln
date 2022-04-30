@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.32421.90
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Monolegal_PruebaTecnica_SebastianCastro", "Monolegal_PruebaTecnica_SebastianCastro.csproj", "{17AAC1FF-2572-4ACC-B825-920D9338415E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Monolegal_PruebaTecnica_SebastianCastro", "Monolegal_PruebaTecnica_SebastianCastro.csproj", "{17AAC1FF-2572-4ACC-B825-920D9338415E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Monolegal_PruebaTecnica_SebastianCastro_Tests", "..\Monolegal_PruebaTecnica_SebastianCastro_Tests\Monolegal_PruebaTecnica_SebastianCastro_Tests.csproj", "{D5F4A9FB-C34B-4EB1-951C-E8C1A81E7957}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{17AAC1FF-2572-4ACC-B825-920D9338415E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{17AAC1FF-2572-4ACC-B825-920D9338415E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{17AAC1FF-2572-4ACC-B825-920D9338415E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D5F4A9FB-C34B-4EB1-951C-E8C1A81E7957}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D5F4A9FB-C34B-4EB1-951C-E8C1A81E7957}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D5F4A9FB-C34B-4EB1-951C-E8C1A81E7957}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D5F4A9FB-C34B-4EB1-951C-E8C1A81E7957}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

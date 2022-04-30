@@ -1,12 +1,14 @@
-﻿using System;
+﻿using Monolegal_PruebaTecnica_SebastianCastro.Dominio.Models;
+using System;
 
 namespace Monolegal_PruebaTecnica_SebastianCastro.Dominio.Dto
 {
     public class FacturaDto
     {
-        public Guid Id { get; set; }
+        public string Id { get; set; }
         public string Codigo { get; set; }
         public string Cliente { get; set; }
+        public string ClienteId { get; set; }
         public string Ciudad { get; set; }
         public string Nit { get; set; }
         public double TotalFactura { get; set; }
