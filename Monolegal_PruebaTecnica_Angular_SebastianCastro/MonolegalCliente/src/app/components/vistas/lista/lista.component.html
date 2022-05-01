@@ -1,0 +1,47 @@
+<div class="container mt-3">
+    <div class="row">
+
+        <div class="card">
+            <div class="card-body text-center">
+                <span class="titulo">LISTADO </span>
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th scope="col">Código Factura</th>
+                            <th scope="col">Cliente</th>
+                            <th scope="col">Ciudad</th>
+                            <th scope="col">NIT</th>
+                            <th scope="col">Total Factura</th>
+                            <th scope="col">SubTotal</th>
+                            <th scope="col">Iva</th>
+                            <th scope="col">Retención</th>
+                            <th scope="col">Fecha Creación</th>
+                            <th scope="col">Estado</th>
+                            <th scope="col">Pagada</th>
+                            <th scope="col">Fecha Pago</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="table-default" *ngFor='let item of _clientes'>
+                            <th scope="row">{{item.codigoDeFactura}}</th>
+                            <td>{{item.cliente}}</td>
+                            <td>{{item.ciudad}}</td>
+                            <td>{{item.nit}}</td>
+                            <td>{{item.factura}}</td>
+                            <td>{{item.subTotal}}</td>
+                            <td>{{item.iva}}</td>
+                            <td>{{item.retencion}}</td>
+                            <td>{{item.fechaCreacion}}</td>
+                            <td>{{item.estado}}</td>
+                            <td>{{item.pagada}}</td>
+                            <td>{{item.fechaDePago}}</td>
+
+                        </tr>
+
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+    </div>
+</div>
