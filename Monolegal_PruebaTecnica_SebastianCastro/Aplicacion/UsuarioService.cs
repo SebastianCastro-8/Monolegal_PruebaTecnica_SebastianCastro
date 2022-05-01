@@ -2,6 +2,7 @@
 using Monolegal_PruebaTecnica_SebastianCastro.Dominio.Dto;
 using Monolegal_PruebaTecnica_SebastianCastro.Dominio.Models;
 using Monolegal_PruebaTecnica_SebastianCastro.Repositories;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace Monolegal_PruebaTecnica_SebastianCastro.Aplicacion
@@ -29,7 +30,10 @@ namespace Monolegal_PruebaTecnica_SebastianCastro.Aplicacion
             var usuario = await usuarioRepository.Get(id);
             return mapper.Map<UsuarioDto>(usuario);
         }
-
+        public async Task<IList<UsuarioDto>> GetAllUsuarios()
+        {
+            return mapper.Map<IList<UsuarioDto>>(await usuarioRepository.GetAll());
+        }
         public async Task<UsuarioDto> UpdateUsuario(string id, UsuarioDto dto)
         {
             var usuario = await usuarioRepository.Get(id);

@@ -4,7 +4,7 @@
         <div class="card">
             <div class="card-body text-center">
                 <span class="titulo">LISTADO </span>
-                <table class="table table-hover">
+                <table class="table table-hover  ">
                     <thead>
                         <tr>
                             <th scope="col">Código Factura</th>
@@ -19,15 +19,16 @@
                             <th scope="col">Estado</th>
                             <th scope="col">Pagada</th>
                             <th scope="col">Fecha Pago</th>
+                            <th scope="col">Recordatorio</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr class="table-default" *ngFor='let item of _clientes'>
-                            <th scope="row">{{item.codigoDeFactura}}</th>
+                            <th scope="row">{{item.codigo}}</th>
                             <td>{{item.cliente}}</td>
                             <td>{{item.ciudad}}</td>
                             <td>{{item.nit}}</td>
-                            <td>{{item.factura}}</td>
+                            <td>{{item.totalFactura}}</td>
                             <td>{{item.subTotal}}</td>
                             <td>{{item.iva}}</td>
                             <td>{{item.retencion}}</td>
@@ -35,6 +36,7 @@
                             <td>{{item.estado}}</td>
                             <td>{{item.pagada}}</td>
                             <td>{{item.fechaDePago}}</td>
+                            <td><button type="button" class="btn btn-warning" (click)="UpdateClient(item.id);">Enviar</button></td>
 
                         </tr>
 

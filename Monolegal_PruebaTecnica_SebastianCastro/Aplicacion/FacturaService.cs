@@ -60,7 +60,7 @@ namespace Monolegal_PruebaTecnica_SebastianCastro.Aplicacion
             }else if (estadoActual == "SegundoRecordatorio")
             {
                 estadoActual = "Desactivado";
-              await  EmailUtil.SendMail(factura, estadoActual);
+               await  EmailUtil.SendMail(factura, estadoActual);
             }
             return estadoActual;
         }

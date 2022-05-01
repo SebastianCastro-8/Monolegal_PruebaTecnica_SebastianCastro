@@ -10,5 +10,6 @@ namespace Monolegal_PruebaTecnica_SebastianCastro.Repositories
         Task<Usuario> Get(string id);
         Task<Usuario> Create(Usuario usuario);
         Task<Usuario> Update(Usuario usuario);
+        Task<IList<Usuario>> GetAll();
     }
 }

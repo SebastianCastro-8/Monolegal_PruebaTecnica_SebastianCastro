@@ -1,10 +1,10 @@
-export interface usuarios {
-  _id: string;
-  codigoDeFactura: string;
+export interface facturas {
+  id: string;
+  codigo: string;
   cliente: string;
   ciudad: string;
   nit: string;
-  factura: number;
+  totalFactura: number;
   subTotal: number;
   iva: number;
   retencion: number;

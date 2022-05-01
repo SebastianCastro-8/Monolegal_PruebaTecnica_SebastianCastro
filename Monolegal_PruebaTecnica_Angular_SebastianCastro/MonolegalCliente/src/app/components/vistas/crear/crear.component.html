@@ -4,62 +4,56 @@
         <form style="max-width: 40rem" [formGroup]="newCliente" (ngSubmit)="onCreated(newCliente.value)">
             <div class="form-group">
                 <fieldset>
+                    <div class="form-group">
+                        <label for="exampleSelect1" class="form-label mt-4">Seleccione Usuario</label>
+                        <select class="form-select" id="clientes" formControlName="clientes">
+                            <option value="">Seleccione</option>
+                          <option value="{{dato.id}}" *ngFor="let dato of _clientes" > {{dato.name}}</option>
+                         
+                        </select>
+                    </div>
 
                     <div class="form-group col-md-8">
                         <label class="form-label mt-4">Código de factura</label>
-                        <input type="text" class="form-control" id="CodigoFactura" formControlName="CodigoFactura" [(ngModel)]="ngCodigoDeFactura" />
+                        <input type="text" class="form-control" id="CodigoFactura" formControlName="codigo" />
                     </div>
-                    <div class="form-group col-md-8">
-                        <label class="form-label mt-4">Cliente</label>
-                        <input type="text" class="form-control" id="cliente" formControlName="cliente" [(ngModel)]="ngCliente" />
-                    </div>
+
 
                     <div class="form-group col-md-8 ">
                         <label class="form-label mt-4 ">Ciudad</label>
-                        <input type="text " class="form-control " id="ciudad " formControlName="ciudad " [(ngModel)]="ngCiudad" />
+                        <input type="text " class="form-control " id="ciudad" formControlName="ciudad" />
                     </div>
 
                     <div class="form-group col-md-8 ">
                         <label class="form-label mt-4 ">NIT</label>
-                        <input type="text " class="form-control " id="nit " formControlName="nit " [(ngModel)]="ngNit" />
+                        <input type="text " class="form-control " id="nit " formControlName="nit" />
                     </div>
 
                     <div class="form-group col-md-8 ">
                         <label class="form-label mt-4 ">Total Factura</label>
-                        <input type="text " class="form-control " id="factura " formControlName="factura " [(ngModel)]="ngFactura" />
+                        <input type="text " class="form-control " id="factura " formControlName="totalFactura" />
                     </div>
 
                     <div class="form-group col-md-8 ">
                         <label class="form-label mt-4 ">SubTotal</label>
-                        <input type="text " class="form-control " id="subTotal " formControlName="subTotal " [(ngModel)]="ngSubTotal" />
+                        <input type="text " class="form-control " id="subTotal " formControlName="subTotal" />
                     </div>
 
                     <div class="form-group col-md-8 ">
                         <label class="form-label mt-4 ">Iva</label>
-                        <input type="text " class="form-control " id="iva " formControlName="iva " [(ngModel)]="ngIva" />
+                        <input type="text " class="form-control " id="iva " formControlName="iva" />
                     </div>
 
                     <div class="form-group col-md-8 ">
                         <label class="form-label mt-4 ">Retención</label>
-                        <input type="text " class="form-control " id="retencion " formControlName="retencion " [(ngModel)]="ngRetencion" />
+                        <input type="text " class="form-control " id="retencion " formControlName="retencion" />
                     </div>
 
                     <div class="form-group col-md-8 ">
                         <label class="form-label mt-4 ">Fecha de Creación</label>
-                        <input type="date " class="form-control " id="fechaCreacion " formControlName="fechaCreacion " [(ngModel)]="ngFechaCreacion" />
+                        <input type="date" class="form-control " id="fechaCreacion " formControlName="fechaCreacion" />
                     </div>
-                    <div class="form-group col-md-8 ">
-                        <label class="form-label mt-4 ">Estado</label>
-                        <input type="text " class="form-control " id="estado " formControlName="estado " disabled />
-                    </div>
-                    <div class="form-group col-md-8 ">
-                        <label class="form-label mt-4 ">Pagada</label>
-                        <input type="text " class="form-control " id="pagada " formControlName="pagada " disabled />
-                    </div>
-                    <div class="form-group col-md-8 ">
-                        <label class="form-label mt-4 ">Fecha de Pago</label>
-                        <input type="date " class="form-control " id="fechaDePago " formControlName="fechaDePago " disabled />
-                    </div>
+
 
                     <button type="submit " class="btn btn-outline-primary mt-3 ">Guardar</button>
                 </fieldset>

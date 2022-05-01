@@ -3,14 +3,15 @@ using System;
 using System.IO;
 using System.Net;
 using System.Net.Mail;
+using System.Text;
 using System.Threading.Tasks;
 
 namespace Monolegal_PruebaTecnica_SebastianCastro.Utils
 {
     public class EmailUtil : IEmailUtil
     {
-        private static string email = "1y3enviossas@gmail.com";
-        private static string password = "envios1y3*";
+        private static string email = "castropruebas@gmail.com";
+        private static string password = "Abcdef12345";
         public async Task SendMail(Factura factura , string facturaPrev)
         {
             try
@@ -19,12 +20,13 @@ namespace Monolegal_PruebaTecnica_SebastianCastro.Utils
                 string body = GetHtml(factura, facturaPrev);
                 MailMessage message = new MailMessage(email, "jhocastro@uniboyaca.edu.co", subject, body);
                 message.IsBodyHtml = true;
-                SmtpClient smtpClient = new SmtpClient("smtp.gmail.com");
+                message.BodyEncoding = UTF8Encoding.UTF8;
+                SmtpClient smtpClient = new SmtpClient("smtp-relay.gmail.com");
                 smtpClient.EnableSsl = true;
                 smtpClient.UseDefaultCredentials = false;
-                smtpClient.Port = 25;
+                smtpClient.Port = 587;
                 smtpClient.Credentials = new NetworkCredential(email, password);
-                await smtpClient.SendMailAsync(message);
+                smtpClient.Send(message);
                 smtpClient.Dispose();
             }
             catch (Exception e)

@@ -27,6 +27,8 @@ namespace Monolegal_PruebaTecnica_SebastianCastro_Tests.Aplication
             var usuario = new Usuario("Npmbre1","Email1");
             var factura = new Factura(dto,usuario);
             await _mailUtil.Object.SendMail(factura,"facPrev");
+            Mock.VerifyAll();
         }
+
     }
 }

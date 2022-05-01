@@ -3,6 +3,7 @@ using MongoDB.Driver;
 using Monolegal_PruebaTecnica_SebastianCastro.Dominio.Dto;
 using Monolegal_PruebaTecnica_SebastianCastro.Dominio.Models;
 using Monolegal_PruebaTecnica_SebastianCastro.Repositories.Mongo;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace Monolegal_PruebaTecnica_SebastianCastro.Repositories
@@ -26,6 +27,11 @@ namespace Monolegal_PruebaTecnica_SebastianCastro.Repositories
         public async Task<Usuario> Get(string id)
         {
             var usuario = await mongoDb.Usuario.Find(x => x.Id == id).FirstOrDefaultAsync();
+            return usuario;
+        }
+        public async Task<IList<Usuario>> GetAll()
+        {
+            var usuario = await mongoDb.Usuario.Find(_ => true).ToListAsync();
             return usuario;
         }
 

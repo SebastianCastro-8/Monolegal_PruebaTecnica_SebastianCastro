@@ -3,6 +3,7 @@ using Monolegal_PruebaTecnica_SebastianCastro.Aplicacion;
 using Monolegal_PruebaTecnica_SebastianCastro.Dominio.Dto;
 using Monolegal_PruebaTecnica_SebastianCastro.Dominio.Models;
 using Monolegal_PruebaTecnica_SebastianCastro.Repositories;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace Monolegal_PruebaTecnica_SebastianCastro.Controllers
@@ -25,6 +26,16 @@ namespace Monolegal_PruebaTecnica_SebastianCastro.Controllers
         {
             return await usuarioService.GetUsuario(id);
         }
+
+
+        [HttpGet]
+        [Route("GetAllUsuarios")]
+
+        public async Task<IList<UsuarioDto>> GetAllUsuarios()
+        {
+            return await usuarioService.GetAllUsuarios();
+        }
+
 
         [HttpPost]
         public async Task<UsuarioDto> Post(UsuarioDto dto)
