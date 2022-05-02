@@ -44,6 +44,6 @@ export class CrearComponent implements OnInit {
       console.log(data);
     });
 
-    alert('Nuevo Cliente Agregado');
+    alert('Nueva Factura Agregada');
   }
 }

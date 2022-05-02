@@ -10,30 +10,26 @@ namespace Monolegal_PruebaTecnica_SebastianCastro.Utils
 {
     public class EmailUtil : IEmailUtil
     {
-        private static string email = "castropruebas@gmail.com";
-        private static string password = "Abcdef12345";
+        private static string email = "sendmail@triunfandojuntosmtp.com.co";
+        private static string password = "Sendmail123@";
         public async Task SendMail(Factura factura , string facturaPrev)
         {
-            try
-            {
+           
                 string subject = "Cambio de estado de factura";
                 string body = GetHtml(factura, facturaPrev);
                 MailMessage message = new MailMessage(email, "jhocastro@uniboyaca.edu.co", subject, body);
                 message.IsBodyHtml = true;
-                message.BodyEncoding = UTF8Encoding.UTF8;
+               // message.BodyEncoding = UTF8Encoding.UTF8;
                 SmtpClient smtpClient = new SmtpClient("smtp-relay.gmail.com");
                 smtpClient.EnableSsl = true;
                 smtpClient.UseDefaultCredentials = false;
                 smtpClient.Port = 587;
+                
+                smtpClient.DeliveryMethod = SmtpDeliveryMethod.Network;
                 smtpClient.Credentials = new NetworkCredential(email, password);
                 smtpClient.Send(message);
                 smtpClient.Dispose();
-            }
-            catch (Exception e)
-            {
-
-                throw e;
-            }
+            
         }
 
         private string GetHtml(Factura factura , string facturaPrev)

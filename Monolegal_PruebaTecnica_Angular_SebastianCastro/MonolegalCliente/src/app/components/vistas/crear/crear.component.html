@@ -4,8 +4,8 @@
         <form style="max-width: 40rem" [formGroup]="newCliente" (ngSubmit)="onCreated(newCliente.value)">
             <div class="form-group">
                 <fieldset>
-                    <div class="form-group">
-                        <label for="exampleSelect1" class="form-label mt-4">Seleccione Usuario</label>
+                    <div class="form-group col-md-8">
+                        <label for="exampleSelect1" class="form-label mt-4">Seleccione Cliente</label>
                         <select class="form-select" id="clientes" formControlName="clientes">
                             <option value="">Seleccione</option>
                           <option value="{{dato.id}}" *ngFor="let dato of _clientes" > {{dato.name}}</option>

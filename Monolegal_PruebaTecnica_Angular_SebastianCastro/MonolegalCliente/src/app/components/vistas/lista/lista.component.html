@@ -3,28 +3,29 @@
 
         <div class="card">
             <div class="card-body text-center">
-                <span class="titulo">LISTADO </span>
-                <table class="table table-hover  ">
+                <span class="titulo">FACTURAS </span>
+
+                <table class="table table-hover">
                     <thead>
-                        <tr>
-                            <th scope="col">Código Factura</th>
-                            <th scope="col">Cliente</th>
-                            <th scope="col">Ciudad</th>
-                            <th scope="col">NIT</th>
-                            <th scope="col">Total Factura</th>
-                            <th scope="col">SubTotal</th>
-                            <th scope="col">Iva</th>
-                            <th scope="col">Retención</th>
-                            <th scope="col">Fecha Creación</th>
-                            <th scope="col">Estado</th>
-                            <th scope="col">Pagada</th>
-                            <th scope="col">Fecha Pago</th>
-                            <th scope="col">Recordatorio</th>
+                        <tr class="table-active">
+                            <th scope="row">Código Factura</th>
+                            <th>Cliente</th>
+                            <th>Ciudad</th>
+                            <th>NIT</th>
+                            <th>Total Factura</th>
+                            <th>SubTotal</th>
+                            <th>Iva</th>
+                            <th>Retención</th>
+                            <th>Fecha Creación</th>
+                            <th>Estado</th>
+                            <th>Pagada</th>
+                            <th>Fecha Pago</th>
+                            <th>Recordatorio</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr class="table-default" *ngFor='let item of _clientes'>
-                            <th scope="row">{{item.codigo}}</th>
+                        <tr class=" table-primary " *ngFor='let item of _clientes'>
+                            <th scope="row ">{{item.codigo}}</th>
                             <td>{{item.cliente}}</td>
                             <td>{{item.ciudad}}</td>
                             <td>{{item.nit}}</td>
@@ -36,7 +37,7 @@
                             <td>{{item.estado}}</td>
                             <td>{{item.pagada}}</td>
                             <td>{{item.fechaDePago}}</td>
-                            <td><button type="button" class="btn btn-warning" (click)="UpdateClient(item.id);">Enviar</button></td>
+                            <td><button type="button " class="btn btn-outline-warning " (click)="UpdateClient(item.id); ">Enviar</button></td>
 
                         </tr>
 
